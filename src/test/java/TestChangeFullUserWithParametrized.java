@@ -46,8 +46,8 @@ public class TestChangeFullUserWithParametrized {
     public void realUserLogIn() {
         editUser = new EditUser(email, name);
         UserChangeRespons userChangeRespons = endpoint.changeUser(token,editUser);
-        UserChangeRespons userGetRespons = endpoint.getUser(token);
-        check.changeUser(userChangeRespons.getUserFieldResponse(),userGetRespons.getUserFieldResponse().getEmail(),userGetRespons.getUserFieldResponse().getName());
+        check.changeUser(userChangeRespons.getUserFieldResponse(),
+                userChangeRespons.getUserFieldResponse().getEmail(),userChangeRespons.getUserFieldResponse().getName());
     }
     @After
     public void deleteUser(){
